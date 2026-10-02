@@ -1248,6 +1248,8 @@ class Moduleadmin extends Command {
 					$sig = $this->FreePBX->GPG->checkSig($sigfile);
 					if(isset($sig['config']['signedwith']) && in_array($sig['config']['signedwith'], array('B53D215A755231A3','86CE877469D2EAD9'))) {
 						$module_Signature = 'Sangoma';
+					} elseif(isset($sig['config']['signedwith']) && in_array($sig['config']['signedwith'], array('2978F8B64A6CD0D43747D9EA617C9B09AC18B74D','617C9B09AC18B74D'))) {
+						$module_Signature = 'TheTechNetwork';
 					} else {
 						$module_Signature = 'Unknown';
 					}
