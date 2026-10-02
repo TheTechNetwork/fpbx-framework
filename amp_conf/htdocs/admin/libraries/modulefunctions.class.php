@@ -85,6 +85,9 @@ class module_functions {
 		$skip_cache = false;
 		$sec_array=false;
 		$modules = array();
+		// A repository index without a <security> section (e.g. a self-hosted module
+		// server) left $security undefined below, which aborts Module Admin.
+		$security = null;
 
 		$result = sql("SELECT * FROM module_xml WHERE id = 'beta'",'getRow',DB_FETCHMODE_ASSOC);
 		if(!empty($result['data'])) {
