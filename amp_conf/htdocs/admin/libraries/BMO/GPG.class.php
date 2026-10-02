@@ -39,7 +39,10 @@ class GPG {
 
 	// Other keys that we also need to trust.
 	private $trustkeys = array(
-		'2016349F5BC6F49340FCCAF99F9169F4B33B4659'
+		'2016349F5BC6F49340FCCAF99F9169F4B33B4659',
+		// TheTechNetwork FreePBX Module Signing <elibrody2@gmail.com>: signs the module
+		// tarballs built by TheTechNetwork/telephony-builds. Public key: 617C9B09AC18B74D.key
+		'2978F8B64A6CD0D43747D9EA617C9B09AC18B74D'
 	);
 
 	private $revokedkeys = array(
@@ -49,7 +52,8 @@ class GPG {
 	private $fskeys = array(
 		'456D051E9204C27C37D4811BB53D215A755231A3',
 		'072410D159E9DA63A459AB203DDB2122FE6D84F7',
-		'1013D73FECAC918A0A25823986CE877469D2EAD9'
+		'1013D73FECAC918A0A25823986CE877469D2EAD9',
+		'2978F8B64A6CD0D43747D9EA617C9B09AC18B74D' // TheTechNetwork (shipped, not on keyservers)
 	);
 
 	// Will hold path to 'gpg' binary
